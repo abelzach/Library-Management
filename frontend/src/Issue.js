@@ -1,14 +1,13 @@
 import React from 'react'
 import Header from './Header'
 
-function Home() {
-
+function Issue() {
   return (
       <>
       <Header/>
-        <h1>Home</h1>
+    <div>Issue</div>
       </>
   )
 }
 
-export default Home;
+export default Issue;

@@ -1,14 +1,13 @@
 import React from 'react'
 import Header from './Header'
 
-function Home() {
-
+function Pending() {
   return (
       <>
       <Header/>
-        <h1>Home</h1>
+    <div>Pending</div>
       </>
   )
 }
 
-export default Home;
+export default Pending
