@@ -2,16 +2,19 @@ import React , {useState , useEffect} from 'react'
 import Header from './Header'
 import Axios from "axios";
 function Insert() {
-
-    const [id, setid] = useState('');
+    const [id, setid] = useState(0);
     const [title, settitle] = useState('');
     const [author, setauthor] = useState('');
     const [category, setcategory] = useState('');
     const [description, setdescription] = useState('');
 
+    useEffect(() => { 
+        var id = 0;
+    },[])
+
     const submitReview = () => {
         Axios.post("http://localhost:3001/api/insert", {
-            id: 14,
+            id: id++,
             title: title,
             author: author,
             category: category,
@@ -84,7 +87,7 @@ function Insert() {
                         />
                         <br/><br/>
                     </div>
-                    <button onClick={submitReview}>
+                    <button onClick={submitReview} >
                         Submit
                     </button>
                     </form>

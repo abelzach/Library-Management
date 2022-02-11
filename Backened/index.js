@@ -13,10 +13,11 @@ app.use(cors());
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get("/get", (req, res) => {
+app.get("/api/get", (req, res) => {
     const sqlSelect = "SELECT * FROM book;";
     db.query(sqlSelect, (err, result) => {
-        console.log(result);
+        res.send(result);
+        console.log("All good")
     });
 });
 
@@ -29,11 +30,11 @@ app.post("/api/insert", (req, res) => {
 
     const sqlInsert = "INSERT INTO book (Id ,Title ,Author ,Category ,Description) VALUES (?,?,?,?,?);";
     db.query(sqlInsert, [id, title, author, category, desc], (err, result) => {
-        console.log(result);
+        res.send(result);
     });
 });
 
-app.get("/" , (req , res) => { 
+app.get("/", (req, res) => { 
         console.log('No probs');
         res.send("welcome :)");
 })
