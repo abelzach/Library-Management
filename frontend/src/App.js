@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./Home.js";
-import Insert from "./Insert"
+import Insert from "./insert"
 import Pending from "./Pending";
 import Issue from './Issue'
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
