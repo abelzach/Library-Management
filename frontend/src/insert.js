@@ -135,7 +135,7 @@ function Insert() {
               <br />
               <br />
             </div>
-            <button className="btn" onClick={submitReview}>
+            <button className="center" onClick={submitReview}>
               Submit
             </button>
           </div>
