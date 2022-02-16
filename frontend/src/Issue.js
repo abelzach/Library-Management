@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Axios from "axios";
-import "./Insert.css";
+import "./Issue.css";
+import DatePicker from 'react-date-picker';
 import { useLocation } from "react-router-dom";
 
 function Insert() {
@@ -11,6 +12,7 @@ function Insert() {
   const { btitle } = state;
 
   console.log(btitle);
+  const [startDate, setStartDate] = useState(new Date());
   const [id, setid] = useState("");
   const [title, settitle] = useState("");
   const [author, setauthor] = useState("");
@@ -28,26 +30,6 @@ function Insert() {
       alert("successfull insert");
     });
   };
-
-  // const validate = (values) => {
-  //     const errors = {};
-  //     if (!values.title) {
-  //         errors.title = "Title is required";
-  //     }
-  //     if (!values.author) {
-  //         errors.author = "Author is required";
-  //     }
-  //     if (!values.description) {
-  //         errors.description = "Description is required";
-  //     }
-  //     if (!values.id) {
-  //         errors.id = "Id is required";
-  //     }
-  //     if (!values.category) {
-  //         errors.category = "Category is required";
-  //     }
-  //     return errors;
-  // };
 
   return (
     <>
@@ -95,14 +77,16 @@ function Insert() {
                 onChange={(e) => {
                   settitle(e.target.value);
                 }}
-              />
-              <label for="title" className="form__label">
-                Book Issued
-              </label>
+                />
+               
+                <div > 
+                <br /> <br />
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                  </div>
             </div>
 
               <br />
-              <br />
+
             </div>
             <button className="center" onClick={submitReview}>
               Submit
