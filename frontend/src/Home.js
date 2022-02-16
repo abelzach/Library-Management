@@ -4,8 +4,14 @@ import Axios from "axios";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
+
+
 function Home() {
   
+  let navigate = useNavigate(); 
+  // const routeChange;
+
   const [books,setbook] = useState([])
 useEffect(() => { 
   Axios.get("http://localhost:3001/api/get").then((response) => {
@@ -13,6 +19,10 @@ useEffect(() => {
     setbook(response.data);
   })
 },[])
+
+
+
+
 return (
       <>
       <Header/>
@@ -20,9 +30,11 @@ return (
     <h1>Books available</h1>
     {books.map((val) => {
       return (
+  
         <center>
-        <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <Card style={{ height: '15rem' }}>
+        
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" key = {val.id}> 
+        <Card  style={{ height: '15rem' }}>
             <Card.Body>
                 <Card.Title>{val.Title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Author : {val.Author}</Card.Subtitle>
@@ -34,8 +46,16 @@ return (
                 <Button
                     className="center"
                   type="submit"
-                  variant="primary">
-                                <h4 style={{color: 'black'}}>Issue Book</h4>                    
+                  variant="primary"
+                  onClick = {() => {
+
+                    let path = './issue'; 
+                    navigate(path ,  { state: { btitle : val.Title } });
+                    }
+                  }
+                  >
+                  <h4 style={{color: 'black'}}>Issue Book</h4>     
+                            
                 </Button>
             </Card.Body>
             </Card>
