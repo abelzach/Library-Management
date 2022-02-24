@@ -9,10 +9,15 @@ import { useLocation } from "react-router-dom";
 function Insert() {
 
   const {state} = useLocation();
-  const { btitle } = state;
-
+  const { btitle} = state;
+  const { bid } = state;
   console.log(btitle);
-  const [startDate, setStartDate] = useState(new Date());
+  console.log(bid);
+
+  var today = new Date();
+  var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+  var rtoday = new Date();
+  var rdate = rtoday.getDate() + '/' + (today.getMonth() + 2) + '/' + today.getFullYear();
   const [id, setid] = useState("");
   const [title, settitle] = useState("");
   const [author, setauthor] = useState("");
@@ -35,7 +40,7 @@ function Insert() {
     <>
       <div className="card">
         <form>
-          <h1>Insert a Book</h1>
+          <h1>Issue Book</h1>
           <div className="form-group">
             <div>
               <input
@@ -81,10 +86,12 @@ function Insert() {
                
                 <div > 
                 <br /> <br />
-                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                  <h3>Issue Date: {date}</h3>
+                  <br/>
+                  <h3>Return Date: {rdate}</h3>
                   </div>
             </div>
-
+                
               <br />
 
             </div>

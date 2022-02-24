@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./Home.js";
+import Home from "./Home";
 import Insert from "./insert"
 import Pending from "./Pending";
 import Issue from './Issue'

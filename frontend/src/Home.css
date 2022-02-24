@@ -6,3 +6,8 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
+.card1{
+
+    background-color: rgb(112, 240, 112);
+}
