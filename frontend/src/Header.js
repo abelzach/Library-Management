@@ -8,7 +8,7 @@ const Home = () => {
       <nav>
         <div className="nav-bar">
           <span className="logo">
-            <a href="#">Zephyr Books</a>{" "}
+            <a href="/">Zephyr Books</a>{" "}
           </span>
 
           <div className="menu">
@@ -17,12 +17,6 @@ const Home = () => {
                 {" "}
                 <Link to="/">Home</Link>
               </li>
-              <li>
-                {" "}
-                {/* <a href="/issue">Issue Book</a>{" "} */}
-                <Link to="/issue">Issue Book</Link>
-              </li>
-              
               <li>
                 {" "}
                 {/* <a href="/insert">Insert Book</a>{" "} */}

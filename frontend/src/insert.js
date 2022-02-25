@@ -4,9 +4,9 @@ import Header from "./Header";
 import Axios from "axios";
 import "./Insert.css";
 
-
 function Insert() {
-  const [id, setid] = useState("");
+
+  //const [id, setid] = useState("");
   const [title, settitle] = useState("");
   const [author, setauthor] = useState("");
   const [category, setcategory] = useState("");
@@ -14,7 +14,7 @@ function Insert() {
 
   const submitReview = () => {
     Axios.post("http://localhost:3001/api/insert", {
-      id: 20,
+      id: 1,
       title: title,
       author: author,
       category: category,

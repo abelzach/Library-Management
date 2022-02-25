@@ -9,6 +9,9 @@ import {
   Grid,
 } from "@material-ui/core/";
 
+function refreshPage() {
+  window.location.reload(false);
+}
 function Home() {
   
   let navigate = useNavigate(); 
@@ -25,6 +28,7 @@ useEffect(() => {
   const deleteBook = (Id) => {
     console.log(Id);
     Axios.delete(`http://localhost:3001/api/delete/${Id}`);
+    refreshPage()
   }
 
 

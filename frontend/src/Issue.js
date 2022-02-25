@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Header from "./Header";
 import Axios from "axios";
 import "./Issue.css";
-import DatePicker from 'react-date-picker';
 import { useLocation } from "react-router-dom";
 
-function Insert() {
+
+function refreshPage() {
+  window.location.reload(false);
+}
+function Issue() {
 
   const {state} = useLocation();
   const { btitle} = state;
@@ -15,25 +17,24 @@ function Insert() {
   console.log(bid);
 
   var today = new Date();
-  var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-  var rtoday = new Date();
-  var rdate = rtoday.getDate() + '/' + (today.getMonth() + 2) + '/' + today.getFullYear();
-  const [id, setid] = useState("");
+  var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+  var rdate = today.getFullYear() + '/' + (today.getMonth() + 2) + '/' + today.getDate();
+  const [cid, setcid] = useState("");
+  const [cname, setcname] = useState("");
   const [title, settitle] = useState("");
-  const [author, setauthor] = useState("");
-  const [category, setcategory] = useState("");
-  const [description, setdescription] = useState("");
 
   const submitReview = () => {
-    Axios.post("http://localhost:3001/api/insert", {
-      id: 14,
-      title: title,
-      author: author,
-      category: category,
-      description: description,
+    Axios.post("http://localhost:3001/api/issue", {
+      id: cid,
+      cname: cname,
+      bname: btitle,
+      bid: bid,
+      date: date,
+      retdate: rdate
     }).then(() => {
       alert("successfull insert");
     });
+    refreshPage()
   };
 
   return (
@@ -45,13 +46,13 @@ function Insert() {
             <div>
               <input
                 type="text"
-                name="id"
-                id="id"
+                name="cid"
+                id="cid"
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
               />
-              <label for="id" className="form__label">
+              <label for="cid" className="form__label">
                 Customer ID
               </label>
             </div>
@@ -60,13 +61,13 @@ function Insert() {
             <div>
               <input
                 type="text"
-                name="id"
-                id="id"
+                name="cname"
+                id="cname"
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
               />
-              <label for="id" className="form__label">
+              <label for="cname" className="form__label">
                 Customer Name
               </label>
             </div>
@@ -105,4 +106,4 @@ function Insert() {
     </>
   );
 }
-export default Insert;
+export default Issue;
