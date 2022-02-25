@@ -21,6 +21,15 @@ app.get("/api/get", (req, res) => {
     });
 });
 
+app.delete('/api/delete/:Id', (req, res) => {
+    const id = req.params.Id;
+    const sqlDelete = "DELETE FROM book WHERE Id = ?";
+    
+    db.query(sqlDelete, id, (err, result) => {
+        if (err) console.log(err)
+    })
+})
+
 app.post("/api/insert", (req, res) => {
     const id = req.body.id;
     const title = req.body.title;

@@ -20,7 +20,12 @@ useEffect(() => {
     console.log(response);
     setbook(response.data);
   })
-},[])
+}, []);
+  
+  const deleteBook = (Id) => {
+    console.log(Id);
+    Axios.delete(`http://localhost:3001/api/delete/${Id}`);
+  }
 
 
   return (
@@ -52,21 +57,24 @@ useEffect(() => {
                 <Card.Subtitle className="mb-2 text-muted">Category: {val.Category}</Card.Subtitle>
                 <br/>
                 <Card.Subtitle className="mb-2 text-muted">Description : {val.Description}</Card.Subtitle>
-                <br />
-                <Button
+                  <br />
+                  
+                  <br />
+                  <button
                     className="center"
                   type="submit"
                   variant="primary"
                   onClick = {() => {
 
                     let path = './issue'; 
-                    navigate(path , { state: { btitle : val.Title} });
+                    navigate(path , { state: { btitle : val.Title, bid : val.Id} });
                     }
                   }
                   >
                   <h4 style={{color: 'black'}}>Issue Book</h4>     
                             
-                </Button>
+                  </button>
+                  <button onClick={()=> {deleteBook(val.Id)}}>Delete book</button>
             </Card.Body>
             </Card>
             <br />
