@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Axios from "axios";
 import "./Issue.css";
@@ -39,8 +39,9 @@ function Issue() {
       retdate: retdate
     }).then(() => {
       alert("successfull insert");
+      refreshPage()
     });
-    refreshPage()
+    
     // console.log(cid)
     // console.log(cname)
     // console.log(btitle)
@@ -101,6 +102,9 @@ function Issue() {
                   settitle(btitle);
                 }}
                 />
+                <label for="title" className="form__label">
+                Book Name
+              </label>
                 <input
                 name="bbid"
                 id="bbid"
@@ -112,30 +116,40 @@ function Issue() {
                   setbid(bid);
                 }}
                 />
+                <label for="bbid" className="form__label">
+                Book id
+                </label>
+                <br/>
                 <input
+                  type="date"
                 name="ddate"
                 id="ddate"
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
-                value = {date}
+                //value = {date}
                 onChange={(e) => {
                   setdate(e.target.value);
                 }}
                 />
+                <label for="ddate" className="form__label">
+                Date of issueing
+              </label>
                 <input
-                type="date-local"
+                type="date"
                 name="retdate"
                 id="retdate"
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
-                value = {rdate}
+                //value = {rdate}
                 onChange={(e) => {
                   setretdate(e.target.value);
                 }}
                 />
-                
+                <label for="retdate" className="form__label">
+                Date of return
+              </label>
             </div>
                 
               <br />
