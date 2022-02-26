@@ -13,28 +13,39 @@ function Issue() {
   const {state} = useLocation();
   const { btitle} = state;
   const { bid } = state;
-  console.log(btitle);
-  console.log(bid);
 
   var today = new Date();
-  var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
-  var rdate = today.getFullYear() + '/' + (today.getMonth() + 2) + '/' + today.getDate();
+  var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  var rdate = today.getFullYear() + '-' + (today.getMonth() + 2) + '-' + today.getDate();
+  console.log(date)
   const [cid, setcid] = useState("");
   const [cname, setcname] = useState("");
   const [title, settitle] = useState("");
+  const [bbid, setbid] = useState("");
+  const [ddate, setdate] = useState("");
+   const [retdate, setretdate] = useState("");
+   
+  // setdate(date);
+  // setretdate(rdate);
+  //setbid(bid);
 
   const submitReview = () => {
-    Axios.post("http://localhost:3001/api/issue", {
+    Axios.post("http://localhost:3001/api/issue1", {
       id: cid,
       cname: cname,
       bname: btitle,
       bid: bid,
-      date: date,
-      retdate: rdate
+      date: ddate,
+      retdate: retdate
     }).then(() => {
       alert("successfull insert");
     });
     refreshPage()
+    // console.log(cid)
+    // console.log(cname)
+    // console.log(btitle)
+    // console.log(bid)
+    //console.log(date)
   };
 
   return (
@@ -51,6 +62,9 @@ function Issue() {
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
+                onChange={(e) => {
+                  setcid(e.target.value);
+                }}
               />
               <label for="cid" className="form__label">
                 Customer ID
@@ -65,7 +79,10 @@ function Issue() {
                 id="cname"
                 className="form__input"
                 placeholder=" "
-                autocomplete="off"
+                  autocomplete="off"
+                  onChange={(e) => {
+                    setcname(e.target.value);
+                  }}
               />
               <label for="cname" className="form__label">
                 Customer Name
@@ -81,16 +98,44 @@ function Issue() {
                 autocomplete="off"
                 value = {btitle}
                 onChange={(e) => {
-                  settitle(e.target.value);
+                  settitle(btitle);
                 }}
                 />
-               
-                <div > 
-                <br /> <br />
-                  <h3>Issue Date: {date}</h3>
-                  <br/>
-                  <h3>Return Date: {rdate}</h3>
-                  </div>
+                <input
+                name="bbid"
+                id="bbid"
+                className="form__input"
+                placeholder=" "
+                autocomplete="off"
+                value = {bid}
+                onChange={(e) => {
+                  setbid(bid);
+                }}
+                />
+                <input
+                name="ddate"
+                id="ddate"
+                className="form__input"
+                placeholder=" "
+                autocomplete="off"
+                value = {date}
+                onChange={(e) => {
+                  setdate(e.target.value);
+                }}
+                />
+                <input
+                type="date-local"
+                name="retdate"
+                id="retdate"
+                className="form__input"
+                placeholder=" "
+                autocomplete="off"
+                value = {rdate}
+                onChange={(e) => {
+                  setretdate(e.target.value);
+                }}
+                />
+                
             </div>
                 
               <br />

@@ -6,7 +6,7 @@ import "./Insert.css";
 
 function Insert() {
 
-  //const [id, setid] = useState("");
+  const [id, setid] = useState("");
   const [title, settitle] = useState("");
   const [author, setauthor] = useState("");
   const [category, setcategory] = useState("");
@@ -14,7 +14,7 @@ function Insert() {
 
   const submitReview = () => {
     Axios.post("http://localhost:3001/api/insert", {
-      id: 1,
+      id: id,
       title: title,
       author: author,
       category: category,
@@ -50,7 +50,7 @@ function Insert() {
         <form>
           <h1>Insert a Book</h1>
           <div className="form-group">
-            {/* <div>
+            <div>
               <input
                 type="text"
                 name="id"
@@ -58,11 +58,14 @@ function Insert() {
                 className="form__input"
                 placeholder=" "
                 autocomplete="off"
+                onChange={(e) => {
+                  setid(e.target.value);
+                }}
               />
               <label for="id" className="form__label">
                 ID
               </label>
-            </div> */}
+            </div>
             <div>
               <input
                 type="text"

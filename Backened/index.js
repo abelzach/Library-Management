@@ -29,17 +29,19 @@ app.delete('/api/delete/:Id', (req, res) => {
         if (err) console.log(err)
     })
 })
-app.post("/api/issue", (req, res) => {
-    const id = req.body.cid;
+app.post("/api/issue1", (req, res) => {
+    const id = req.body.id;
     const cname = req.body.cname;
     const bname = req.body.bname;
     const bid = req.body.bid;
     const date = req.body.date;
     const retdate = req.body.retdate;
 
-    const sqlIssue = "INSERT INTO issue (custId, custName,id,bookName,Date,retDate) VALUES (?,?,?,?,?,?);";
-    db.query(sqlIssue, [id,cname,bname,bid,date,retdate], (err, result) => {
-        res.send(result);
+    const sqlIssue = "INSERT INTO issue (custId, custName,bookName,id,Date,retDate) VALUES (?,?,?,?,'1990-9-01','1990-2-01');";
+    db.query(sqlIssue, [id,cname,bname,bid], (err, result) => {
+        if (err) console.log(err);
+        else
+            res.send("Success")
     });
 });
 app.post("/api/insert", (req, res) => {
