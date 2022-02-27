@@ -1,8 +1,6 @@
 import React , {useState , useEffect} from 'react'
 import Header from './Header'
 import Axios from "axios";
-// import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import {

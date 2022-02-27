@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api/get", (req, res) => {
-  const sqlSelect = "SELECT * FROM book WHERE avail = 1;";
+  const sqlSelect = "SELECT * FROM book WHERE avail=1;";
   db.query(sqlSelect, (err, result) => {
     res.send(result);
     console.log("All good");
@@ -81,7 +81,7 @@ app.post("/api/insert", (req, res) => {
   const author = req.body.author;
   const category = req.body.category;
   const desc = req.body.description;
-  const avail = true;
+  const avail = 1;
   const sqlInsert =
     "INSERT INTO book (Id ,Title ,Author ,Category ,Description,avail) VALUES (?,?,?,?,?,?);";
   db.query(
