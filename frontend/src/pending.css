@@ -1,0 +1,39 @@
+.tbody
+{
+    position: relative;
+    margin-top: 2em;
+}
+
+
+.table_col
+{
+    margin-top: 200px;
+    border: 1px solid black;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+.table_content
+{
+    padding-left:2em;
+    padding-right:2em;
+    padding-top: 1em;
+    padding-bottom:0.5em;
+    color: #0C2D48;
+    background-color : #2E8BC0;
+    border-bottom: 5px solid black;
+}
+
+.table_return
+{
+    margin-left: 0;
+    border: 3px solid #0395a0;
+    /* background-color:green */
+
+}
+.table_return:hover{
+    border: 3px solid #09c250;   
+}
