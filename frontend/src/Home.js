@@ -15,7 +15,6 @@ function refreshPage() {
 function Home() {
   
   let navigate = useNavigate(); 
-  // const routeChange;
 
   const [books,setbook] = useState([])
 useEffect(() => { 
@@ -61,6 +60,8 @@ useEffect(() => {
                 <Card.Subtitle className="mb-2 text-muted">Category: {val.Category}</Card.Subtitle>
                 <br/>
                 <Card.Subtitle className="mb-2 text-muted">Description : {val.Description}</Card.Subtitle>
+                  <br />
+                <Card.Subtitle className="mb-2 text-muted">Availability : {val.avail}</Card.Subtitle>
                   <br />
                   
                   <br />
