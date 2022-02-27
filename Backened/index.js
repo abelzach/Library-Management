@@ -38,13 +38,21 @@ app.get("/api/pending", (req, res) => {
   });
 });
 
-app.delete("/api/deletec/:Id", (req, res) => {
+app.delete("/api/deletec/:Id/:BId", (req, res) => {
   const id = req.params.Id;
+  const bid = req.params.BId;
   const sqlDelete = "DELETE FROM issue WHERE custId = ?";
-
+  const avail = true;
   db.query(sqlDelete, id, (err, result) => {
     if (err) console.log(err);
   });
+
+  var sql = "UPDATE book SET avail = ? WHERE Id = ?";
+  db.query(sql, [avail, bid], (err, result) => {
+    if (err) console.log(err);
+  });
+
+
 });
 
 app.post("/api/issue1", (req, res) => {

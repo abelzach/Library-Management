@@ -13,9 +13,9 @@ function Pending() {
 
   const [record, setrecord] = useState([]);
 
-  const deletec = (Id) => {
+  const deletec = (Id , BId) => {
     console.log(Id);
-    Axios.delete(`http://localhost:3001/api/deletec/${Id}`);
+    Axios.delete(`http://localhost:3001/api/deletec/${Id}/${BId}`);
     refreshPage();
   };
 
@@ -52,7 +52,7 @@ function Pending() {
               <td>
                 <button
                   className="table_return"
-                  onClick={() => deletec(val.custId)}
+                  onClick={() => deletec(val.custId , val.id)}
                 >
                   Returned
                 </button>
