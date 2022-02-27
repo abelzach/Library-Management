@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Axios from "axios";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import "./pending.css";
-import { useNavigate } from "react-router-dom";
 
 function Pending() {
   function refreshPage() {
@@ -13,9 +10,9 @@ function Pending() {
 
   const [record, setrecord] = useState([]);
 
-  const deletec = (Id) => {
+  const deletec = (Id , BId) => {
     console.log(Id);
-    Axios.delete(`http://localhost:3001/api/deletec/${Id}`);
+    Axios.delete(`http://localhost:3001/api/deletec/${Id}/${BId}`);
     refreshPage();
   };
 
@@ -31,6 +28,7 @@ function Pending() {
       <br />
       <br />
       <br />
+      <center>
       <tbody className="tbody">
         <th className="table_col">Customer Id</th>
         <th className="table_col">Customer Name</th>
@@ -38,8 +36,8 @@ function Pending() {
         <th className="table_col">Book Name</th>
         <th className="table_col">Date</th>
         <th className="table_col">Return Date</th>
+        &emsp;
         <th className="table_col">Return</th>
-
         {record.map((val) => {
           return (
             <tr className="table">
@@ -52,7 +50,7 @@ function Pending() {
               <td>
                 <button
                   className="table_return"
-                  onClick={() => deletec(val.custId)}
+                  onClick={() => deletec(val.custId , val.id)}
                 >
                   Return
                 </button>
@@ -61,7 +59,8 @@ function Pending() {
           );
         })}
       </tbody>
-      <Header />
+        <Header />
+        </center>
     </>
   );
 }
