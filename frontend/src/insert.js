@@ -45,8 +45,8 @@ function Insert() {
   // };
 
   return (
-    <>
-      <div className="card">
+    <div className="bbody">
+      <div className="ccard">
         <form>
           <h1>Insert a Book</h1>
           <div className="form-group">
@@ -147,7 +147,7 @@ function Insert() {
         </form>
       </div>
       <Header />
-    </>
+    </div>
   );
 }
 export default Insert;

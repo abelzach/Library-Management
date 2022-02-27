@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from 'react'
 import Header from './Header'
 import Axios from "axios";
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,8 @@ function refreshPage() {
 function Home() {
   
   let navigate = useNavigate(); 
+  // const routeChange;
+  
 
   const [books,setbook] = useState([])
 useEffect(() => { 
@@ -30,16 +32,18 @@ useEffect(() => {
     refreshPage()
   }
 
-
   return (
-   
+    
       <>
+      
       <Header/>
-    <br/><br/><br/><br/>
+      <div className="container">
+    
       <h1>Books available</h1>
+      
       <Grid
             container spacing={{ xs: 4, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
-            container
+            
             direction="row"
             justifyContent="space-around"
             alignItems="flex-start"
@@ -51,22 +55,18 @@ useEffect(() => {
   
         <center>
         <Grid val xs key={val.id}>
-        <div class="shadow-lg p-3 mb-5 bg-white rounded" key = {val.id}> 
-        <Card className="card1" style={{ height: '15rem' }}>
-            <Card.Body>
-                <Card.Title>{val.Title}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Author : {val.Author}</Card.Subtitle>
+        <div className="shadow" key = {val.id}> 
+        <div className="card" style={{ height: '15rem' }}>
+            <div className='card_body'>
+                <div classname='Card_title'>{val.Title}</div>
+                <div className='Card_Subtitle'>Author : {val.Author}</div>
                 <br />
-                <Card.Subtitle className="mb-2 text-muted">Category: {val.Category}</Card.Subtitle>
+                <div className='Card_Subtitle'>Category: {val.Category}</div>
                 <br/>
-                <Card.Subtitle className="mb-2 text-muted">Description : {val.Description}</Card.Subtitle>
-                  <br />
-                <Card.Subtitle className="mb-2 text-muted">Availability : {val.avail}</Card.Subtitle>
-                  <br />
-                  
-                  <br />
+                <div className='Card_Subtitle'>Description : {val.Description}</div>
+                
                   <button
-                    className="center"
+                    className="b1"
                   type="submit"
                   variant="primary"
                   onClick = {() => {
@@ -76,22 +76,23 @@ useEffect(() => {
                     }
                   }
                   >
-                  <h4 style={{color: 'black'}}>Issue Book</h4>     
+                  <h4>Issue Book</h4>     
                             
                   </button>
-                  <button onClick={()=> {deleteBook(val.Id)}}>Delete book</button>
-            </Card.Body>
-            </Card>
-            <br />
-            <br/>
+                  <h4>
+                  <button className='b2' onClick={()=> {deleteBook(val.Id)}}>Delete book</button></h4>
+            </div>
+            </div>
+            
             </div>
             </Grid>
+            
     </center>
-    )
+      )
       
     })}
       </Grid>
-      <br/><br/><br/><br/>
+      </div>
       </>
   )
 }
