@@ -54,7 +54,7 @@ function Pending() {
                   className="table_return"
                   onClick={() => deletec(val.custId)}
                 >
-                  Returned
+                  Return
                 </button>
               </td>
             </tr>
