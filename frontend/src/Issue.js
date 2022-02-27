@@ -51,41 +51,41 @@ function Issue() {
 
   return (
     <>
-      <div className="card">
+      <div className="issuecard">
         <form>
           <h1>Issue Book</h1>
-          <div className="form-group">
+          <div className="form-groupi">
             <div>
               <input
                 type="text"
                 name="cid"
                 id="cid"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                 autocomplete="off"
                 onChange={(e) => {
                   setcid(e.target.value);
                 }}
               />
-              <label for="cid" className="form__label">
+              <label for="cid" className="form__labeli">
                 Customer ID
               </label>
             </div>
 
-          <div className="form-group">
+          <div className="form-groupi">
             <div>
               <input
                 type="text"
                 name="cname"
                 id="cname"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                   autocomplete="off"
                   onChange={(e) => {
                     setcname(e.target.value);
                   }}
               />
-              <label for="cname" className="form__label">
+              <label for="cname" className="form__labeli">
                 Customer Name
               </label>
             </div>
@@ -94,7 +94,7 @@ function Issue() {
                 type="text"
                 name="title"
                 id="title"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                 autocomplete="off"
                 value = {btitle}
@@ -102,13 +102,13 @@ function Issue() {
                   settitle(btitle);
                 }}
                 />
-                <label for="title" className="form__label">
+                <label for="title" className="form__labeli">
                 Book Name
               </label>
                 <input
                 name="bbid"
                 id="bbid"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                 autocomplete="off"
                 value = {bid}
@@ -116,7 +116,7 @@ function Issue() {
                   setbid(bid);
                 }}
                 />
-                <label for="bbid" className="form__label">
+                <label for="bbid" className="form__labeli">
                 Book id
                 </label>
                 <br/>
@@ -124,7 +124,7 @@ function Issue() {
                   type="date"
                 name="ddate"
                 id="ddate"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                 autocomplete="off"
                 //value = {date}
@@ -132,22 +132,23 @@ function Issue() {
                   setdate(e.target.value);
                 }}
                 />
-                <label for="ddate" className="form__label">
+                <label for="ddate" className="form__labeli">
                 Date of issueing
               </label>
                 <input
                 type="date"
                 name="retdate"
                 id="retdate"
-                className="form__input"
+                className="form__inputi"
                 placeholder=" "
                 autocomplete="off"
+                
                 //value = {rdate}
                 onChange={(e) => {
                   setretdate(e.target.value);
                 }}
                 />
-                <label for="retdate" className="form__label">
+                <label for="retdate" className="form__labeli">
                 Date of return
               </label>
             </div>
