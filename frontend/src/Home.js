@@ -1,6 +1,8 @@
 import React , {useState , useEffect} from 'react'
 import Header from './Header'
 import Axios from "axios";
+// import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import {
@@ -56,11 +58,11 @@ useEffect(() => {
         <div className="shadow" key = {val.id}> 
         <div className="card" style={{ height: '15rem' }}>
             <div className='card_body'>
-                <div classname='Card_title'>{val.Title}</div>
-                <div className='Card_Subtitle'>Author : {val.Author}</div>
-                <br />
+                <div className='Card_title'>{val.Title}</div>
+                <div className='Card_SubtitleA'>Author : {val.Author}</div>
+                
                 <div className='Card_Subtitle'>Category: {val.Category}</div>
-                <br/>
+                
                 <div className='Card_Subtitle'>Description : {val.Description}</div>
                 
                   <button

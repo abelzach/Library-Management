@@ -4,24 +4,22 @@
     top: 85%;
     left: 18%;
     font-size: 12px;
+    opacity: 0;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    margin: 2em;
-    font-size: larger;
 }
 
 .b2 {
-    margin: 2em;
     position: absolute;
     padding: 2%;
     width: fit-content;
     height: fit-content;
+    opacity: 0;
     top: 85%;
     left: 67%;
     font-size: 12px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: larger;
 }
 
 .shadow {
@@ -31,12 +29,37 @@
     position: relative;
     height: fit-content;
     width: fit-content;
+    transition: .2s;
 }
 
+.card:hover .b1 {
+    opacity: 1;
+    transition: all .2s ease-in;
+}
 
+.card:hover .b2 {
+    opacity: 1;
+    transition: all .2s ease-in;
+}
+
+.shadow:hover {
+    /* height: 150%;
+    width: 150%; */
+    /* padding: 2rem; */
+    font-size: 1.2rem;
+    height: 2rem;
+    transition: all .2s;
+    height: max-content;
+}
+
+.shadow::after {
+    /* padding: 2rem; */
+    font-size: 1rem;
+    transition: all .2s;
+}
 
 .card {
-    background-color: #283149;
+    background-color: #404A65;
     border-radius: 0.5rem;
     padding: 1.5rem;
     position: relative;
@@ -47,19 +70,52 @@
     display: grid;
     border: 2px solid #0395a0;
     border-radius: 0.5rem;
-    padding: 3rem;
+    padding: 1rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-shadow: 14px 14px 20px #0e2333, 14px 14px 50px #06141f;
     box-shadow: 14px 14px 20px #0e2333, 14px 14px 50px #06141f;
 }
 
+.Card_title {
+    top: 100%;
+    font-size: 3rem;
+    padding: auto;
+    text-transform: uppercase;
+    padding-top: 45%;
+    transition: .2s;
+}
+
+.card:hover .Card_title {
+    font-size: 1.8rem;
+    padding-top: 0%;
+    /* transition: all .2s ease-in-out; */
+}
+
 .card:hover {
-    background-color: #345175;
-    /* height: 200%; */
+    /* background-color: #345175; */
+    height: 2rem;
     /* padding-top: 5rem; */
     /* width: 150%; */
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in-out;
+    /* display: all; */
+}
+
+
+/* .card .Card_title:hover {
+    top: 80%;
+    font-size: 1rem;
+    text-transform: uppercase;
+} */
+
+.Card_Subtitle {
+    opacity: 0;
+    padding: .5rem;
+}
+
+.card:hover .Card_Subtitle {
+    opacity: 1;
+    transition: all .2s ease-in-out;
 }
 
 .container {
@@ -69,7 +125,7 @@
 .h4 {
     background-color: #0f0e0ec9;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1.3rem;
     position: relative;
     width: 100%;
     height: 100%;
