@@ -40,7 +40,7 @@ useEffect(() => {
       <div className="hbody">
       <div className="container">
     
-      <h1>Books available</h1>
+      <h1><div className='h1style'>Books available</div></h1>
       
       <Grid
             container spacing={{ xs: 4, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
@@ -57,7 +57,7 @@ useEffect(() => {
         <center>
         <Grid val xs key={val.id}>
         <div className="shadow" key = {val.id}> 
-        <div className="card" style={{ height: '15rem' }}>
+        <div className="card" >
             <div className='card_body'>
                 <div className='Card_title'>{val.Title}</div>
                 <div className='Card_SubtitleA'>Author : {val.Author}</div>
