@@ -50,11 +50,12 @@
     /* padding: 2rem; */
     font-size: 1.2rem;
     height: 2rem;
+    padding: auto;
     transition: all .2s;
 }
 
 .shadow::after {
-    /* padding: 2rem; */
+    padding: 2rem;
     font-size: 1rem;
     transition: all .2s;
 }
@@ -66,12 +67,13 @@
     padding: 1rem;
     position: relative;
     width: fit-content;
+    max-width: 30rem;
     color: aliceblue;
     font-weight: 200;
-    display: grid;
+    display: relative;
     border: 2px solid #0395a0;
     border-radius: 0.5rem;
-    padding: 1rem;
+    /* padding-top: 1rem; */
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-shadow: 14px 14px 20px #0e2333, 14px 14px 50px #06141f;
@@ -80,7 +82,7 @@
 
 .Card_title {
     top: 100%;
-    font-size: 2.2rem;
+    font-size: 2rem;
     /* padding: auto; */
     text-transform: uppercase;
     vertical-align: middle;
@@ -97,6 +99,7 @@
 .card:hover {
     /* background-color: #345175; */
     height: fit-content;
+    position: relative;
     /* padding-top: 5rem; */
     /* width: 150%; */
     transition: all 0.2s ease-in-out;
@@ -125,6 +128,12 @@
     transition: all .2s ease-in-out;
 }
 
+.card:hover body {
+    padding: 2rem;
+    padding: auto;
+    transition: all .2s ease-in-out;
+}
+
 .Card_Subtitled {
     opacity: 0;
     padding: .1rem;
@@ -137,7 +146,7 @@
     opacity: 1;
     font-size: 1rem;
     padding: .8rem;
-    padding-bottom: 1.8rem;
+    padding-bottom: 25%;
     transition: all .2s ease-in-out;
 }
 
@@ -159,6 +168,7 @@ body {
     width: 100%;
     background-image: url("bg1.jpg");
     opacity: .8;
+    display: absolute;
     background-size: "cover";
     /* margin-top: -70px; */
     /*font-size: 50px; */
@@ -175,4 +185,8 @@ body {
     border: white;
     font-family: Garamond;
     border-radius: 0.5rem;
+}
+
+.buttons {
+    padding: 1rem;
 }

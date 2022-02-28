@@ -65,7 +65,7 @@ useEffect(() => {
                 <div className='Card_Subtitle'>Category: {val.Category}</div>
                 
                 <div className='Card_Subtitled'>Description : {val.Description}</div>
-                
+                <div className='buttons'>
                   <button
                     className="b1"
                   type="submit"
@@ -82,6 +82,7 @@ useEffect(() => {
                   </button>
                   <h4>
                   <button className='b2' onClick={()=> {deleteBook(val.Id)}}>Delete book</button></h4>
+                  </div>
             </div>
             </div>
             
