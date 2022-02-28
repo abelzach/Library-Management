@@ -25,9 +25,11 @@ function Pending() {
 
   return (
     <>
+    <div className="pbody">
       <br />
       <br />
       <br />
+      
       <center>
       <tbody className="tbody">
         <th className="table_col">Customer Id</th>
@@ -61,6 +63,7 @@ function Pending() {
       </tbody>
         <Header />
         </center>
+        </div>
     </>
   );
 }

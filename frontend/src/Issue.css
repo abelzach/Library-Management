@@ -39,6 +39,7 @@
     border: 2px solid #0395a0;
     border-radius: 0.5rem;
     padding: 1rem;
+    background-color: #283149;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-box-shadow: 14px 14px 20px #0e2333, 14px 14px 50px #06141f;
@@ -49,6 +50,7 @@
     position: relative;
     width: 50%;
     height: 1rem;
+    background-color: #283149;
 }
 
 .form__inputi {
@@ -65,6 +67,7 @@
     outline: none;
     padding: 1rem;
     background: none;
+    background-color: #283149;
     /* Change border when input focus*/
 }
 

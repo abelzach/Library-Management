@@ -36,7 +36,8 @@ useEffect(() => {
     
       <>
       
-      <Header/>
+      
+      <div className="hbody">
       <div className="container">
     
       <h1>Books available</h1>
@@ -44,9 +45,9 @@ useEffect(() => {
       <Grid
             container spacing={{ xs: 4, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
             
-            direction="row"
+            // direction="row"
             justifyContent="space-around"
-            alignItems="flex-start"
+            // alignItems="flex-start"
             
           >
         {books.map((val) => {
@@ -93,6 +94,8 @@ useEffect(() => {
     })}
       </Grid>
       </div>
+      </div>
+      <Header/>
       </>
   )
 }
