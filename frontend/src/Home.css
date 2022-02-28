@@ -158,6 +158,7 @@ body {
     height: 100%;
     width: 100%;
     background-image: url("bg1.jpg");
+    opacity: .8;
     background-size: "cover";
     /* margin-top: -70px; */
     /*font-size: 50px; */
@@ -172,5 +173,6 @@ body {
     color: #1f2c39;
     font-weight: bold;
     border: white;
+    font-family: Garamond;
     border-radius: 0.5rem;
 }
