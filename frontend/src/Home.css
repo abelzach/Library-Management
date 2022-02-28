@@ -5,6 +5,7 @@
     left: 18%;
     font-size: 12px;
     opacity: 0;
+    transition: .1s;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
@@ -17,6 +18,7 @@
     opacity: 0;
     top: 85%;
     left: 67%;
+    transition: .1s;
     font-size: 12px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -113,6 +115,7 @@
     padding: .01rem;
     font-size: .01rem;
     padding-bottom: 2rem;
+    transition: .2s;
 }
 
 .card:hover .Card_Subtitle {
@@ -127,6 +130,7 @@
     padding: .1rem;
     font-size: .1rem;
     padding-bottom: 2rem;
+    transition: .2s;
 }
 
 .card:hover .Card_Subtitled {
@@ -162,4 +166,11 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.h1style {
+    color: #1f2c39;
+    font-weight: bold;
+    border: white;
+    border-radius: 0.5rem;
 }
