@@ -61,7 +61,7 @@
     background-color: #404A65;
     height: fit-content;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1rem;
     position: relative;
     width: fit-content;
     color: aliceblue;
@@ -110,12 +110,30 @@
 
 .Card_Subtitle {
     opacity: 0;
-    padding: .5rem;
+    padding: .01rem;
+    font-size: .01rem;
     padding-bottom: 2rem;
 }
 
 .card:hover .Card_Subtitle {
     opacity: 1;
+    font-size: 1rem;
+    padding: .8rem;
+    transition: all .2s ease-in-out;
+}
+
+.Card_Subtitled {
+    opacity: 0;
+    padding: .1rem;
+    font-size: .1rem;
+    padding-bottom: 2rem;
+}
+
+.card:hover .Card_Subtitled {
+    opacity: 1;
+    font-size: 1rem;
+    padding: .8rem;
+    padding-bottom: 1.8rem;
     transition: all .2s ease-in-out;
 }
 

@@ -40,7 +40,7 @@ useEffect(() => {
       <div className="hbody">
       <div className="container">
     
-      <h1><div className='h1style'>Books available</div></h1>
+      <h1><div>Books available</div></h1>
       
       <Grid
             container spacing={{ xs: 4, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
@@ -64,7 +64,7 @@ useEffect(() => {
                 
                 <div className='Card_Subtitle'>Category: {val.Category}</div>
                 
-                <div className='Card_Subtitle'>Description : {val.Description}</div>
+                <div className='Card_Subtitled'>Description : {val.Description}</div>
                 
                   <button
                     className="b1"
