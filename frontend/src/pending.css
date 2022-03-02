@@ -1,5 +1,7 @@
 .tbody {
     position: relative;
+    background-color: #07111E;
+    opacity: 0.8;
     margin-top: 2em;
 }
 
@@ -18,15 +20,17 @@
     padding-right: 2em;
     padding-top: 1em;
     padding-bottom: 0.5em;
-    color: #0C2D48;
-    background-color: #2E8BC0;
+    color: #FBFBFB;
+    background-color: #07111E;
+    opacity: 0.8;
     border-bottom: 5px solid black;
 }
 
 .table_return {
     margin-left: 0;
     border: 3px solid #0395a0;
-    /* background-color:green */
+    background-color: #07111E;
+    opacity: 0.8;
 }
 
 .table_return:hover {

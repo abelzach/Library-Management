@@ -47,12 +47,6 @@ function Issue() {
         window.location.reload();
         window.location.href = "/return";
       });
-
-    // console.log(cid)
-    // console.log(cname)
-    // console.log(btitle)
-    // console.log(bid)
-    //console.log(date)
   };
 
   return (
