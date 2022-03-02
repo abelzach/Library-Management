@@ -32,6 +32,7 @@ nav .nav-bar {
     max-width: 1000px;
     width: 100%;
     background-color: var(--nav-colour);
+    opacity: 0.9;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
