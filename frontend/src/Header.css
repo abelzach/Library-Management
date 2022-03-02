@@ -7,7 +7,7 @@
     --body-colour: #E4E9F7;
     --text-colour: #FFF;
     --side-nav: #010718;
-    --nav-colour: #4070F4;
+    --nav-colour: #1c2836;
     --searcg-bar: #F2F2F2;
     --search-text: #010718;
 }
@@ -45,7 +45,8 @@ nav .nav-bar .logo {
     color: var(--text-colour);
     text-decoration: none;
     font-weight: 500;
-    text-align: left;
+    justify-content:left;
+    
 }
 
 nav .nav-bar .logo a {
@@ -54,7 +55,10 @@ nav .nav-bar .logo a {
     color: var(--text-colour);
     text-decoration: none;
     font-weight: 500;
-    text-align: left;
+    font-family: "Helvetica Neue";
+    letter-spacing: 0.8px;
+
+    left: 2rem;
 }
 
 .nav-bar .nav-links {
