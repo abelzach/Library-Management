@@ -39,7 +39,8 @@ function Issue() {
       retdate: retdate
     }).then(() => {
       alert("successfull insert");
-      refreshPage()
+      window.location.reload();
+      window.location.href = '/return'
     });
     
     // console.log(cid)

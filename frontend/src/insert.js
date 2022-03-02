@@ -22,6 +22,8 @@ function Insert() {
     }).then(() => {
       alert("successfull insert");
     });
+    window.location.reload();
+      //window.location.href = ''
   };
 
   // const validate = (values) => {
