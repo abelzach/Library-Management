@@ -17,16 +17,24 @@ function Insert() {
       author: author,
       category: category,
       description: description,
+    }).then(response => { 
+
+      if (response.data.errno === 1062)
+        window.alert("Book with same ID already exist");
+      else
+        window.alert(response.data.sqlMessage);
+      window.location.reload();
+      window.location.href = "/";
     })
-      .then((res) => {
+      .catch(error => {
         window.location.reload();
         window.location.href = "/";
-      })
-      .catch((err) => {
-        alert(err);
-        window.location.reload();
-        window.location.href = "/";
-      });
+    });
+      // .catch((err) => {
+      //   console.log(err);
+      //   window.alert(err);
+      
+      // });
   };
 
   return (

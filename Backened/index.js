@@ -87,9 +87,9 @@ app.post("/api/insert", (req, res) => {
     db.query(
         sqlInsert, [id, title, author, category, desc, avail],
         (err, result) => {
-            res.send(result);
-        }
-    );
+            if (err)
+             res.send(err);
+        });
 });
 
 app.get("/", (req, res) => {
