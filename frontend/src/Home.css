@@ -99,6 +99,7 @@
 .card:hover {
     /* background-color: #345175; */
     height: fit-content;
+    z-index: 9999;
     position: relative;
     /* padding-top: 5rem; */
     /* width: 150%; */
@@ -167,7 +168,6 @@ body {
     height: 100%;
     width: 100%;
     background-image: url("bg1.jpg");
- 
     opacity: .8;
     display: absolute;
     background-size: "cover";

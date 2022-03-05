@@ -154,7 +154,7 @@ function Issue() {
 
               <br />
             </div>
-            <button className="center" onClick={submitReview}>
+            <button className="center" onClick={submitReview} type="reset">
               Submit
             </button>
           </div>

@@ -53,6 +53,7 @@ function Pending() {
                 <button
                   className="table_return"
                   onClick={() => deletec(val.custId , val.id)}
+                  type="reset"
                 >
                   Return
                 </button>
